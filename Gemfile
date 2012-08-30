@@ -6,10 +6,12 @@ source :rubygems
 gemspec # Include gemspec dependencies
 
 # The rest of the dependencies are for use when in the locomotive development environment
+gem 'carrierwave-mongoid', :git => 'https://github.com/jnicklas/carrierwave-mongoid.git', :branch => 'mongoid-3.0'
+gem 'mongoid-tree', :git => 'git://github.com/benedikt/mongoid-tree', :require => 'mongoid/tree'
 
 group :development do
   # gem 'custom_fields', :path => '../gems/custom_fields' # for Developers
-  # gem 'custom_fields', :git => 'git://github.com/locomotivecms/custom_fields.git', :branch => '2.0.0.rc' # Branch on Github
+   gem 'custom_fields', :git => 'https://github.com/avaranovich/custom_fields.git', :branch => 'mongoid-3' # Branch on Github
 
   # gem 'locomotive-aloha-rails', :path => '../gems/aloha-rails' # for Developers
   # gem 'locomotive_liquid', :path => '../gems/liquid' # for Developers
