@@ -26,9 +26,9 @@ module Locomotive
             before_save :add_subdomain_to_domains
 
             ## named scopes ##
-            scope :match_domain, lambda { |domain| { :any_in => { :domains => [*domain] } } }
+            scope :match_domain, lambda { |domain| any_in(:domains => [*domain]) }
             scope :match_domain_with_exclusion_of, lambda { |domain, site|
-              { :any_in => { :domains => [*domain] }, :where => { :_id.ne => site.id } }
+              any_in(:domains => [*domain]).where(:_id.ne => site.id)
             }
 
             send :include, InstanceMethods
