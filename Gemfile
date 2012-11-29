@@ -21,7 +21,13 @@ group :development do
   gem 'rspec-rails', '~> 2.8.0' # In order to have rspec tasks and generators
   gem 'rspec-cells'
 
-  gem 'unicorn' # Using unicorn_rails instead of webrick (default server)
+  platform :ruby do
+    gem 'unicorn' # Using unicorn_rails instead of webrick (default server)
+  end
+
+  platform :jruby do
+    gem 'mizuno' # Using mizuno for jruby 
+  end
 end
 
 group :assets do
