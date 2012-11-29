@@ -54,7 +54,7 @@ Gem::Specification.new do |s|
   if RUBY_PLATFORM == 'java'
     s.add_dependency 'rmagick4j',                         '~> 0.3.7'
   else
-    s.add_dependency 'rmagick',                         '>= 2.12.2' if RUBY_PLATFORM == 'java'
+    s.add_dependency 'rmagick',                         '>= 2.12.2' 
   end
   
 
