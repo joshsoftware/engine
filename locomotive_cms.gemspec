@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'cancan',                          '>=1.6.7'
 
   s.add_dependency 'mongo',                           '~> 1.7.0'
-  s.add_dependency 'bson_ext',                        '~> 1.7.0'
+  
   s.add_dependency 'mongoid' ,                        '~> 3.0.5'
   s.add_dependency 'mongoid-tree'
 
@@ -51,8 +51,13 @@ Gem::Specification.new do |s|
   s.add_dependency 'sanitize',                        '>= 2.0.3'
   s.add_dependency 'highline',                        '>= 1.6.2'
   s.add_dependency 'unidecoder',                      '>= 1.1.1'
+  if RUBY_PLATFORM == 'java'
+    s.add_dependency 'rmagick4j',                         '~> 0.3.7'
+  else
+    s.add_dependency 'rmagick',                         '>= 2.12.2' if RUBY_PLATFORM == 'java'
+  end
+  
 
-  s.add_dependency 'rmagick',                         '>= 2.12.2'
   s.add_dependency 'carrierwave-mongoid',             '~> 0.3.0.alpha'
   s.add_dependency 'fog',                             '>= 1.3.1'
   s.add_dependency 'dragonfly',                       '>= 0.9.8'
