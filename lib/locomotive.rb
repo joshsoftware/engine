@@ -19,7 +19,7 @@ require 'locomotive/routing'
 require 'locomotive/regexps'
 require 'locomotive/render'
 require 'locomotive/middlewares'
-require 'locomotive/session_store'
+# require 'locomotive/session_store'
 
 module Locomotive
   extend ActiveSupport::Autoload

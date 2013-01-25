@@ -1,6 +1,7 @@
 require 'mongoid'
 require 'mongoid/railtie'
 require 'mongoid/tree'
+require 'mongo_session_store-rails3'
 require 'devise'
 require 'devise/orm/mongoid'
 require 'devise-encryptable'
