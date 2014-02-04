@@ -84,7 +84,7 @@ module Locomotive
           return unless self.editable_elements.any? { |el| el.disabled? }
 
           # super fast way to remove useless elements all in once
-          self.collection.update(self.atomic_selector, '$pull' => { 'editable_elements' => { "disabled.#{::Mongoid::Fields::I18n.locale}" => true } })
+          self.collection.find(self.atomic_selector).update('$pull' => { 'editable_elements' => { "disabled.#{::Mongoid::Fields::I18n.locale}" => true } })
         end
 
       end
